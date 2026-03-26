@@ -368,7 +368,7 @@ let adminPassword = localStorage.getItem("admin_pw") || "6317";
 let records  = JSON.parse(localStorage.getItem("att_records_v2") || "[]");
 let rosters  = JSON.parse(localStorage.getItem("att_rosters") || "{}"); // {장소: [{name,phone}]}
 let schedule = JSON.parse(localStorage.getItem("att_schedule") || "{}");
-let sheetsUrl = localStorage.getItem("att_sheets_url") || "";
+let sheetsUrl = localStorage.getItem("att_sheets_url_v2") || "";
 let selectedPlace = null, selectedType = null;
 let currentSummaryPlace = PLACES[0];
 let currentRosterPlace  = PLACES[0];
@@ -839,7 +839,7 @@ function saveSheetConfig() {
     alert("올바른 Google Apps Script URL을 입력해주세요."); return;
   }
   sheetsUrl = url;
-  localStorage.setItem("att_sheets_url", url);
+  localStorage.setItem("att_sheets_url_v2", url);
   setSheetStatus(true);
   alert("✅ 저장되었습니다!\n이제 출석 체크 시 구글 시트에 자동으로 기록됩니다.");
 }
